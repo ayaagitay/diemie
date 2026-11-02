@@ -11,3 +11,9 @@ export type DayEntry = {
   tasks: Task[];
   hours: Record<number, string>;
 }
+
+export type Mood = {
+  id: number;
+  name: string;
+  color: string;
+};
