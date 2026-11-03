@@ -18,3 +18,14 @@ export function daysInMonth(year: number, month: number): number {
 export function firstWeekday(year: number, month: number): number {
   return (new Date(year, month, 1).getDay() + 6) % 7;
 }
+
+export function monthGrid(year: number, month: number): (number | null)[] {
+  const blanks = Array(firstWeekday(year, month)).fill(null);
+
+  const count = daysInMonth(year,month);
+  const days = [];
+  for (let i = 0; i < count; i++) {
+    days.push(i+1);
+  }
+  return [...blanks, ...days];
+}
