@@ -10,8 +10,8 @@ export function HoursPlan() {
       <ul>
         {hours.map(hour => (
           <li key={hour} className="flex gap-3 border-b border-stone-200 py-1">
-            <span className="w-12 text-stone-400">{
-              pad(hour)}:00
+            <span className="w-12 text-stone-400">
+              {pad(hour)}:00
             </span>
             <input className="flex-1 bg-transparent outline-none" />
           </li>

@@ -1,6 +1,6 @@
 // import { Calendar } from '@/components/Calendar';
 import { HoursPlan } from '@/components/HoursPlan';
-// import { DayPanel } from '@/components/DayPanel';
+import { DayPanel } from '@/components/DayPanel';
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       <h1 className="text-3xl font-medium">Diemie</h1>
       {/* <Calendar /> */}
       <HoursPlan />
-      {/* <DayPanel /> */}
+      <DayPanel />
     </main>
   );
 }
