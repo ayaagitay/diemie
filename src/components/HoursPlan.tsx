@@ -6,7 +6,7 @@ export function HoursPlan() {
   }
   return (
     <section>
-      <h2>Plan</h2>
+      <h2 className="mb-2 font-medium">Plan</h2>
       <ul>
         {hours.map(hour => (
           <li key={hour} className="flex gap-3 border-b border-stone-200 py-1">
