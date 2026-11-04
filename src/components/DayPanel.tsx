@@ -1,5 +1,5 @@
 export function DayPanel() {
-  const tasks = Array.from({length: 3}, (_, i) => <span>•</span>);
+  const tasks = Array.from({length: 3}, (_, i) => <span key={i}>•</span>);
   return (
     <section>
       <div>
