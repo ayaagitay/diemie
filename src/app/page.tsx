@@ -8,7 +8,7 @@ export default function Home() {
       <h1 className="text-3xl font-medium">Diemie</h1>
       <div className='mt-6 grid gap-6 md:grid-cols-[16rem_1fr_20rem]'>
         <Calendar />
-        <HoursPlan />
+        <HoursPlan date="2026-11-5"/>
         <DayPanel />
       </div>
 

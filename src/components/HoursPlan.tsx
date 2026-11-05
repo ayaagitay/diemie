@@ -1,12 +1,15 @@
 import {pad} from "@/lib/dates";
-export function HoursPlan() {
+
+type Props = { date: string };
+
+export function HoursPlan({date}: Props) {
   const hours: number[] = [];
   for (let i=0; i<24; i++) {
     hours.push(i);
   }
   return (
     <section>
-      <h2 className="mb-2 font-medium">Plan</h2>
+      <h2 className="mb-2 font-medium">Plan · {date}</h2>
       <ul>
         {hours.map(hour => (
           <li key={hour} className="flex gap-3 border-b border-stone-200 py-1">
