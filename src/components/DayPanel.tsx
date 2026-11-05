@@ -1,7 +1,10 @@
-export function DayPanel() {
+type Props = { date: string };
+
+export function DayPanel({date}: Props) {
   const tasks = Array.from({length: 3}, (_, i) => <span key={i} className="text-stone-400">•</span>);
   return (
     <section className="flex flex-col gap-6">
+      <p className="text-sm text-stone-400">{date}</p>
       <div>
         <h2 className="mb-2 font-medium">Tasks</h2>
         <ul>
