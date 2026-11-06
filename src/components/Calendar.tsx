@@ -1,4 +1,5 @@
 import { monthGrid, keyOf } from "@/lib/dates"
+import { useState } from "react";
 
 type Props = {
   selected: string;
@@ -7,15 +8,20 @@ type Props = {
 const WEEKDAYS = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
 export function Calendar({selected, onSelect}: Props) {
   const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth();
-  const today = now.getDate();
-  const todayKey = keyOf(now)
+  const [view, setView] = useState(new Date(now.getFullYear(), now.getMonth(), 1));
+  const year = view.getFullYear();
+  const month = view.getMonth();
+  const todayKey = keyOf(now);
   const grid = monthGrid(year, month);
-  const title = now.toLocaleString('en', {month: 'long', year: 'numeric'});
+  const title = view.toLocaleString('en', {month: 'long', year: 'numeric'});
+
   return (
     <section>
-      <h2 className="mb-2 font-medium">{title}</h2>
+      <div className="mb-2 flex items-center justify-between">
+        <button onClick={() => setView(new Date(year, month-1, 1))}>‹</button>
+        <h2 className="font-medium">{title}</h2>
+        <button onClick={() => setView(new Date(year, month+1, 1))}>›</button>
+      </div>
     <div className="grid grid-cols-7 gap-1 text-center text-sm">
       {WEEKDAYS.map((weekday, i) => (
         <span key={i} className="text-stone-400">
